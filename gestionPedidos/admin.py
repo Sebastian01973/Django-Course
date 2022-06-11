@@ -8,6 +8,7 @@ class ClientAdmin(admin.ModelAdmin):
     search_fields = ('name','mobile')
 
 
+# Pruebas
 admin.site.register(Client, ClientAdmin)
 admin.site.register(Article)
 admin.site.register(Order)
