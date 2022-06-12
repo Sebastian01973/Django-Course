@@ -8,7 +8,17 @@ class ClientAdmin(admin.ModelAdmin):
     search_fields = ('name','mobile')
 
 
+class ArticleAdmin(admin.ModelAdmin):
+    list_filter = ('section',)
+
+
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ('number', 'date')
+    list_filter = ('date',)
+    date_hierarchy = 'date'
+
+
 # Pruebas
 admin.site.register(Client, ClientAdmin)
-admin.site.register(Article)
-admin.site.register(Order)
+admin.site.register(Article, ArticleAdmin)
+admin.site.register(Order, OrderAdmin)
